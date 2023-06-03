@@ -4,7 +4,7 @@
 // - protoc             v3.21.12
 // source: route/route.proto
 
-package auth
+package route
 
 import (
 	context "context"

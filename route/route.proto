@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package app.sharetrip.route;
 
-option go_package = "github.com/Jocerdikiawann/shared_proto_share_trip/auth";
+option go_package = "github.com/Jocerdikiawann/shared_proto_share_trip/route";
 option java_multiple_files = true;
 
 service Route {
