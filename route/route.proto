@@ -19,7 +19,8 @@ message WatchRequest { string googleId = 1; }
 
 message LocationRequest {
   string googleId = 1;
-  Point point = 2;
+  bool isFinish = 2;
+  Point point = 3;
 }
 
 message DestintationAndPolylineRequest {
