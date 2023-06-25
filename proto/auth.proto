@@ -2,11 +2,17 @@ syntax = "proto3";
 
 package app.sharetrip.auth;
 
+import "google/api/annotations.proto";
+
 option go_package = "github.com/Jocerdikiawann/shared_proto_share_trip/auth";
-option java_multiple_files = true;
 
 service Auth {
-  rpc SignUp(UserRequest) returns (UserResponse) {}
+  rpc SignUp(UserRequest) returns (UserResponse) {
+    option (google.api.http) = {
+      post: "/v1/route/signUp",
+      body: "*"
+    };
+  }
 }
 
 message UserRequest {

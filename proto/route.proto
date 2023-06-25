@@ -2,15 +2,36 @@ syntax = "proto3";
 
 package app.sharetrip.route;
 
+import "google/api/annotations.proto";
+
 option go_package = "github.com/Jocerdikiawann/shared_proto_share_trip/route";
-option java_multiple_files = true;
 
 service Route {
-  rpc WatchLocation(WatchRequest) returns (stream LocationResponse) {}
-  rpc GetDestination(RouteRequest) returns (DestintationAndPolylineResponse) {}
-  rpc SendLocation(stream LocationRequest) returns (stream LocationResponse) {}
-  rpc SendDestinationAndPolyline(DestintationAndPolylineRequest)
-      returns (DestintationAndPolylineResponse) {}
+  rpc WatchLocation(WatchRequest) returns (stream LocationResponse) {
+    option (google.api.http) = {
+      post: "/v1/route/watchLocation",
+      body: "*"
+    };
+  }
+  
+  rpc GetDestination(RouteRequest) returns (DestintationAndPolylineResponse) {
+    option (google.api.http) = {
+      post: "/v1/route/getDestination",
+      body: "*"
+    };
+  }
+  rpc SendLocation(stream LocationRequest) returns (stream LocationResponse) {
+    option (google.api.http) = {
+      post: "/v1/route/sendLocation",
+      body: "*"
+    };
+  }
+  rpc SendDestinationAndPolyline(DestintationAndPolylineRequest) returns (DestintationAndPolylineResponse) {
+    option (google.api.http) = {
+      post: "/v1/route/sendDestinationAndPolyline",
+      body: "*"
+    };
+  }
 }
 
 message RouteRequest { string id = 1; }
