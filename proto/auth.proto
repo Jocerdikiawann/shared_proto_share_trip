@@ -4,7 +4,7 @@ package app.sharetrip.auth;
 
 import "google/api/annotations.proto";
 
-option go_package = "github.com/Jocerdikiawann/shared_proto_share_trip/auth";
+option go_package = "github.com/Jocerdikiawann/proto_share_trip/auth";
 
 service Auth {
   rpc SignUp(UserRequest) returns (UserResponse) {

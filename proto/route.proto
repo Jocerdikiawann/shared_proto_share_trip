@@ -4,7 +4,7 @@ package app.sharetrip.route;
 
 import "google/api/annotations.proto";
 
-option go_package = "github.com/Jocerdikiawann/shared_proto_share_trip/route";
+option go_package = "github.com/Jocerdikiawann/proto_share_trip/route";
 
 service Route {
   rpc WatchLocation(WatchRequest) returns (stream LocationResponse) {
