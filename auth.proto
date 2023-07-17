@@ -2,10 +2,17 @@ syntax = "proto3";
 
 package pb;
 
+import "google/api/annotations.proto";
+
 option go_package = "github.com/Jocerdikiawann/server_share_trip/pb";
 
 service Auth {
-  rpc SignUp(UserRequest) returns (UserResponse) {}
+  rpc SignUp(UserRequest) returns (UserResponse) {
+    option (google.api.http) = {
+      post: "/v1/route/signUp",
+      body: "*"
+    };
+  }
 }
 
 message UserRequest {
