@@ -25,6 +25,7 @@ message RouteRequest { string id = 1; }
 message DestintationAndPolylineRequest {
   Point destination = 1;
   string encodedRoute = 2;
+  Point initialLocation = 3;
 }
 
 
@@ -39,6 +40,7 @@ message DestintationAndPolylineType {
   string id = 1;
   string encodedRoute = 2;
   Point destination = 3;
+  Point initialLocation = 4;
 }
 
 message Point {

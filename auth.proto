@@ -9,7 +9,7 @@ option go_package = "github.com/Jocerdikiawann/server_share_trip/pb";
 service Auth {
   rpc SignUp(UserRequest) returns (UserResponse) {
     option (google.api.http) = {
-      post: "/v1/route/signUp",
+      post: "/v1/auth/signUp",
       body: "*"
     };
   }
